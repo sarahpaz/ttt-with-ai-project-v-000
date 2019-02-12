@@ -27,5 +27,3 @@ def game_start
   puts "Would like to play again? [y/ n]"
   game_start until gets.strip == "n"
 end
-
-
