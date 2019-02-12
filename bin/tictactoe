@@ -22,4 +22,3 @@ def start
   puts "Would like to play again? [y/ n]"
   start unless gets.strip == "n"
 end
-
