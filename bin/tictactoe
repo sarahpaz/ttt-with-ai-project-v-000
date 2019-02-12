@@ -3,25 +3,25 @@
 require_relative '../config/environment'
 
 def start
-  puts "\nWelcome to Command Line Tic Tac Toe!"
-  puts "\nWhat kind of game will you like to play? Please choose player mode:
-  0 - Computer VS Computer
-  1 - You VS Computer
-  2 - You VS Your friend"
+  puts "Welcome to Command Line Tic Tac Toe!"
+  puts "Choose your player mode:
+  0 - Computer vs. Computer
+  1 - Player 1 vs. Computer
+  2 - Player 1 vs. Player 2"
 
-  player_mode = gets.strip
+  input = gets.strip
 
-  if player_mode == "1"
+  if input == "1"
     puts "Do you want to go first? [y/ n]"
     if gets.strip == "y"
       Game.new(Players::Human.new("X"), Players::Computer.new("O"), Board.new).play
     else   Game.new(Players::Computer.new("X"), Players::Human.new("O"), Board.new).play
     end
 
-  elsif player_mode == "0"
+  elsif input == "0"
     Game.new(Players::Computer.new("X"), Players::Computer.new("O"), Board.new).play
 
-  elsif player_mode == "2"
+  elsif input == "2"
     Game.new(Players::Human.new("X"), Players::Human.new("O"), Board.new).play
   end
   puts "Would like to play again? [y/ n]"
