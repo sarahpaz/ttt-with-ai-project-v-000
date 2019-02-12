@@ -81,6 +81,6 @@ class Game
       game = Game.new(Players::Human.new("X"), Players::Human.new("O"), Board.new).play
     end
     puts "Would like to play again? [y/ n]"
-    start unless gets.strip "n"
+    game.start unless gets.strip "n"
   end
 end
