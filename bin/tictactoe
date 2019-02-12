@@ -28,5 +28,5 @@ def start
   end
 
   puts "Would like to play again? [y/ n]"
-  tart until gets.strip == "n"
+  start until gets.strip == "n"
 end
