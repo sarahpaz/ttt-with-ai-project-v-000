@@ -12,9 +12,7 @@ def start
   input = gets.strip
 
   if input == "1"
-    puts "Do you want to go first? [y/ n]"
-
-    if gets.strip == "y"
+    if 
       Game.new(Players::Human.new("X"), Players::Computer.new("O"), Board.new).play
     else
       Game.new(Players::Computer.new("X"), Players::Human.new("O"), Board.new).play
