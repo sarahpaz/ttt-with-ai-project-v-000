@@ -63,7 +63,7 @@ class Game
     end
   end
 
-  def self.start
+  def start
     puts "Welcome to Tic Tac Toe!"
     puts "Would you like to play '0', '1', or '2' player?"
     input = gets.strip
@@ -81,6 +81,6 @@ class Game
       game = Game.new(Players::Human.new("X"), Players::Human.new("O"), Board.new).play
     end
     puts "Would like to play again? [y/ n]"
-    self.start unless gets.strip "n"
+    start unless gets.strip "n"
   end
 end
