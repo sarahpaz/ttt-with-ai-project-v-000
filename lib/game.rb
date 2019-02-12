@@ -68,22 +68,20 @@ class Game
     puts "Would you like to play '0', '1', or '2' player?"
     input = gets.strip
 
-    if input == '0'
-      game = Game.new(Players::Computer.new("X"), Players::Computer.new("O"), Board.new)
-    elsif input == '1'
-      game = Game.new(Players::Human.new("X"), Players::Computer.new("O"), Board.new)
-    elsif input == '2'
-      game = Game.new(Players::Human.new("X"), Players::Human.new("O"), Board.new)
+    if input == "1"
+      puts "Do you want to go first? [y/ n]"
+      if gets.strip == "y"
+        Game.new(Players::Human.new("X"), Players::Computer.new("O"), Board.new).play
+      else
+        Game.new(Players::Computer.new("X"), Players::Human.new("O"), Board.new).play
+      end
+    elsif input == "0"
+      Game.new(Players::Computer.new("X"), Players::Computer.new("O"), Board.new).play
+    elsif input == "2"
+      Game.new(Players::Human.new("X"), Players::Human.new("O"), Board.new).play
     end
-    until game.won?
-      game.play
-    end
-      puts "Would you like to play again? [Y / N]"
-      input = gets.strip
-    if input == "Y"
-      start
-    else
-      nil
-    end
+    puts "Would like to play again? [y/ n]"
   end
+  game_start until gets.strip == "n"
+
 end
