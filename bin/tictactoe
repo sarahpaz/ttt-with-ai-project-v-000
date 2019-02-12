@@ -2,7 +2,7 @@
 
 require_relative '../config/environment'
 
-def game_start
+def start
   puts "\nWelcome to Command Line Tic Tac Toe!"
   puts "\nWhat kind of game will you like to play? Please choose player mode:
   0 - Computer VS Computer
@@ -28,4 +28,4 @@ def game_start
 
 end
 
-game_start until gets.strip == "n"
+start until gets.strip == "n"
